@@ -25,6 +25,15 @@ class LinkedList{
         }
     }
 
+    insertAfter(value, afterValue){
+        const existingNode = this.find(afterValue);
+
+        if(existingNode){
+            const newNode = {value: value, next: existingNode.next};
+            existingNode.next = newNode;
+        }
+    }
+
     find(value){
         if(!this.head){
             return null;
@@ -103,3 +112,8 @@ console.log(LinkedList1.toArray());
 
 console.log(LinkedList1.find("jyoti"));
 console.log(LinkedList1.find(1));
+
+LinkedList1.insertAfter("jyoti", 1);
+LinkedList1.insertAfter(false, true);
+
+console.log(LinkedList1.toArray());
