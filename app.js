@@ -25,6 +25,23 @@ class LinkedList{
         }
     }
 
+    find(value){
+        if(!this.head){
+            return null;
+        }
+
+        let curNode = this.head;
+
+        while (curNode) {
+            if(curNode.value===value){
+                return curNode;
+            }
+            curNode = curNode.next;
+        }
+
+        return null;
+    }
+
     delete(value){
         if(!this.head){
             console.log("the list is empty");
@@ -83,3 +100,6 @@ LinkedList1.delete(67.70);
 LinkedList1.delete("jyoti");
 
 console.log(LinkedList1.toArray());
+
+console.log(LinkedList1.find("jyoti"));
+console.log(LinkedList1.find(1));
